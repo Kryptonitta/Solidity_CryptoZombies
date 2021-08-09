@@ -18,19 +18,26 @@ contract ZombieFactory {
     //Creación de array público (y vacío de momento...) 
     Zombie[] public zombies;
 
+    // Mapeo: nos sirve para seguir el ratro del propietario
+    mapping (uint => address) public zombieToOwner; //guardar datos
+    mapping (address => uint) ownerZombieCount; //ver datos
+
     //Declaración de la función PRIVADA
     function _createZombie(string _name, uint _dna) private {
         // Creando el zombie
         uint id = zombies.push(Zombie(_name, _dna)) - 1;
+        // Aplicando la variable global msg.sender
+        zombieToOwner[id] = msg.sender;
+        ownerZombieCount[msg.sender]++;
         // Mostrando el evento
-        emit NewZombie(id, _name, _dna);
+        NewZombie(id, _name, _dna);
     }
 
     //Creación de función view privada 
     //NOTA: los nombres de las funciones PRIVADAS LLEVAN EL "_" al inicio
     function _generateRandomDna(string _str) private view returns (uint) {
         // Genero un número aleatorio usando keccak256
-        uint rand = uint(keccak256(abi.encodePacked(_str)));
+        uint rand = uint(keccak256(_str);
         return rand % dnaModulus; // Como queremos que el número aleatorio solo tenga 16 dígitos, devolvemos el módulo del mismo
     }
 

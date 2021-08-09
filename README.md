@@ -1,4 +1,4 @@
-<h1> Resumen de Cryptozombies</h1>
+<h1> Los apuntes de Cryptozombies.io</h1>
 
 <a>https://solidity-es.readthedocs.io/es/latest/index.html</a><br>
 <a>https://cryptozombies.io/</a>
@@ -189,3 +189,40 @@ Solidity creará automaticamente una función getter para acceder a él. Otros c
 <p>Hasta acá logré hacer mi zombie y lo llamé Krypto. Si querés ver cómo me quedó go to the link!</p>
 
 <p> <a href="https://share.cryptozombies.io/es/lesson/1/share/krypto?id=Y3p8MTIzMjQy">Krypto Zombie 🧟‍♀️</a></p>
+
+<h3>MAPEOS Y DIRECCIONES</h3>
+<h4>Direcciones</h4>
+<p>Es como la dirección de una cuenta bancaria. Tiene un balance de Ether (la divisa utilizada en la blockchain de Ethereum) y puede hacer transferencias a otras cuentas bancarias. Esta dirección está asociada a un usuario específico (o un contrato inteligente). El número es un identificador único se asemeja a algo así: </p>
+
+<p>0x0cE446255506E92DF41614C46F1d6df9Cc969183</p>
+
+<h4>Mapeos</h4>
+<p>Los mapeos son otra forma de organizar los datos en Solidity. <br> Es esencialmente una asociación valor-clave para guardar y ver datos.</p>
+
+// Para una aplicación financial, guardamos un uint con el balance de su cuenta:
+mapping (address => uint) public accountBalance;
+// O podría usarse para guardar / ver los usuarios basados en ese userId
+mapping (uint => string) userIdToName;
+
+<h3>MSG.SENDER</h3>
+<p>Es una de las variables globales que podemos encontrar en Solidity. Hace referencia a la dirección de la persona (o el contrato inteligente) que ha llamado a esa función.</p>
+
+<p><strong>En Solidity, la ejecución de una función necesita empezar con una llamada exterior. Un contrato se sentará en la blockchain sin hacer nada esperando a que alguien llame a una de sus funciones. Así que siempre habrá un msg.sender.</strong></p>
+
+    mapping (address => uint) favoriteNumber;
+
+    function setMyNumber(uint _myNumber) public {
+    // Actualiza tu mapeo `favoriteNumber` para guardar `_myNumber` dentro de `msg.sender`
+    favoriteNumber[msg.sender] = _myNumber;
+    // ^ La sintaxis para guardar datos en un mapeo es como en los arrays
+    }
+
+    function whatIsMyNumber() public view returns (uint) {
+    // Conseguimos el valor guardado en la dirección del emisor
+    // Será `0` si el emisor no ha llamado a `setMyNumber` todavía
+    return favoriteNumber[msg.sender];
+    }
+
+<p>En el ejemplo, cualquiera puede llamar a setMyNumber y guardar un uint en nuestro contrato. Y cuando llamen a whatIsMyNumber les va a devolver el uint guardado.</p>
+
+<p>msg.sender da la seguridad de la blockchain de Ethereum. La única forma de que otra persona edite la información de esta sería robandole la clave privada asociada a la dirección Ethereum.</p>
