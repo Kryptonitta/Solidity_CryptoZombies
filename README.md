@@ -146,3 +146,23 @@ Solidity creará automaticamente una función getter para acceder a él. Otros c
 <p>En esta función, el valor devuelto depende POR COMPLETO de los parámetros que le pasemos. En este caso deberíamos declarar la función como pure.</p>
 
 <p>NOTA: No siempre es fácil recordar marcar una función como pure o view, por suerte el compilador de Solidity avisa cuándo debemos usar estos modificadores de función.</p>
+
+<h3>Keccak256 y Encasillado de tipo</h3>
+
+<p>EXTRA -- > ¿QUÉ ES EL HASH:<br>Es un algoritmo matemático que transforma cualquier bloque arbitrario de datos en una nueva serie de caracteres con una longitud fija. Independientemente de la longitud de los datos de entrada, el valor hash de salida tendrá siempre la misma longitud. Es una función criptográfica.</p>
+
+<h4>NÚMEROS ALEATORIOS</h4>
+<h5>keccak 256</h5>
+<p>Es una función hash de Ethereum hash, una versión de SHA3. Una función hash lo que hace es mapear una cadena de caracteres a un número aleatorio hexadecimal de 256-bits. Un pequeño cambio en la cadena de texto producirá un hash completamente distinto. <br> Es muy útil para muchas cosas, pero por ahora vamos a usarlo solamente para generar un número cuasi-aleatorio.</p>
+
+<h5>Casteo de variables (conversión)</h5>
+<p>A veces es necesario convertir entre tipos de datos. Por ejemplo en el siguiente caso:</p>
+
+    uint8 a = 5;
+    uint b = 6;
+    // dará un error porque a * b devuelve un `uint` y no un `uint8`:
+    uint8 c = a * b;
+    // debemos de forzar la variable b para que sea convertida a `uint8`
+    uint8 c = a * uint8(b);
+    
+<p>Casteándolo a uint8 funcionará y el compilador no nos dará error.</p>

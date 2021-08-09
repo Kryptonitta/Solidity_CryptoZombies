@@ -13,7 +13,7 @@ contract ZombieFactory {
         uint dna ;
     }
 
-    //Creación de array público
+    //Creación de array público (y vacío de momento...) 
     Zombie[] public zombies;
 
     //Declaración de la función PRIVADA
@@ -24,7 +24,9 @@ contract ZombieFactory {
 
     //Creación de función view privada 
     function _generateRandomDna(string _str) private view returns (uint) {
-        
+        // Genero un número aleatorio usando keccak256
+        uint rand = uint(keccak256(_str));
+        return rand % dnaModulus; // Como queremos que el número aleatorio solo tenga 16 dígitos, devolvemos el módulo del mismo
     }
 
 }
