@@ -59,15 +59,14 @@ Las estructuras te permiten crear tipos de datos más complejos que tienen varia
 <h3>ARREGLOS/ARRAYS</h3>
 <p>Cuando quieres tener una colección de algo, puedes usar un array. Hay dos tipos de arrays en Solidity: arrays fijos y arrays dinámicos:</p>
 
-<p>// Un Array con una longitud fija de 2 elementos:</p>
-    uint[2] fixedArray;
-<p>// otro Array fijo, con longitud de 5 elementos:</p>
-    string[5] stringArray;
-<p>// un Array dinámico, sin longitud fija que puede seguir creciendo:</p>
-    uint[] dynamicArray;
-<p>// Array dinámico, podemos seguir añadiéndole elementos</p>
-    Person[] people;
-
+<p>// Un Array con una longitud fija de 2 elementos:</p><br>
+    uint[2] fixedArray;<br><br>
+<p>// otro Array fijo, con longitud de 5 elementos:</p><br>
+    string[5] stringArray;<br><br>
+<p>// un Array dinámico, sin longitud fija que puede seguir creciendo:</p><br>
+    uint[] dynamicArray;<br><br>
+<p>// Array dinámico, podemos seguir añadiéndole elementos</p><br>
+    Person[] people;<br><br>
 <p>!!! --> Crear un array de estructuras puede ser muy útil para guardar datos estructurados en tu contrato, como una base de datos.</p>
 
 <h4>Arrays públicos</h4>
