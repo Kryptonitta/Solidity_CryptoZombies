@@ -59,18 +59,18 @@ Las estructuras te permiten crear tipos de datos más complejos que tienen varia
 <h3>ARREGLOS/ARRAYS</h3>
 <p>Cuando quieres tener una colección de algo, puedes usar un array. Hay dos tipos de arrays en Solidity: arrays fijos y arrays dinámicos:</p>
 
-<p>// Un Array con una longitud fija de 2 elementos:</p><br>
+<p>* Array con una longitud fija de 2 elementos:</p>
     uint[2] fixedArray;<br><br>
-<p>// otro Array fijo, con longitud de 5 elementos:</p><br>
+<p>* Array fijo, con longitud de 5 elementos:</p>
     string[5] stringArray;<br><br>
-<p>// un Array dinámico, sin longitud fija que puede seguir creciendo:</p><br>
+<p>* Array dinámico, sin longitud fija que puede seguir creciendo:</p>
     uint[] dynamicArray;<br><br>
-<p>// Array dinámico, podemos seguir añadiéndole elementos</p><br>
+<p>* Array dinámico, podemos seguir añadiéndole elementos</p>
     Person[] people;<br><br>
-<p>!!! --> Crear un array de estructuras puede ser muy útil para guardar datos estructurados en tu contrato, como una base de datos.</p>
+<p>--> Crear un array de estructuras puede ser muy útil para guardar datos estructurados en tu contrato, como una base de datos.</p>
 
 <h4>Arrays públicos</h4>
-Solidity creará automaticamente una función getter para acceder a él. Otros contratos entonces podrán leer (pero no escribir) de este array. Es un patrón de uso muy útil para guardar datos públicos en tu contrato.
+Solidity creará automaticamente una función getter para acceder a él. Otros contratos entonces podrán leer (pero no escribir) este array. Es un patrón de uso muy útil para guardar datos públicos en tu contrato.
 
     Person[] public people;
 
@@ -82,5 +82,5 @@ Solidity creará automaticamente una función getter para acceder a él. Otros c
 
     eatHamburgers("nombre",100)
 
-<p>NOTA: La convención (no obligatoria) es llamar los parámetros de las funciones con nombres que empiezan con un subrayado (_) para de esta forma diferenciarlos de variables globales.</p>
+<p>NOTA: La convención es llamar los parámetros de las funciones con nombres que empiezan con un subrayado (_) para de esta forma diferenciarlos de variables globales.</p>
 
