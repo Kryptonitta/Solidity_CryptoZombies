@@ -11,6 +11,7 @@ contract ZombieFactory {
     struct Zombie {
         string name;
         uint dna ;
+    }
 
     //Creación de array público
     Zombie[] public zombies;

@@ -56,6 +56,11 @@ Las Variables de estado se guardan permanentemente en el almacenamiento del cont
 <h3>ESTRUCTURAS --> STRUCTS (estructuras de datos)</h3>
 Las estructuras te permiten crear tipos de datos más complejos que tienen varias propiedades.
 
+    struct Nombre {
+            string name;
+            uint numero ;
+        }
+
 <h3>ARREGLOS/ARRAYS</h3>
 <p>Cuando quieres tener una colección de algo, puedes usar un array. Hay dos tipos de arrays en Solidity: arrays fijos y arrays dinámicos:</p>
 
