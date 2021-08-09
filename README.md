@@ -82,10 +82,67 @@ Solidity creará automaticamente una función getter para acceder a él. Otros c
 <h3>FUNCIONES</h3>
 <p>La estructura de una función en solidity se asemeja a:</p>
 
-    function eatHamburgers(string _name, uint _amount) {
+    Comida[] public comidas;
+
+    function agregarComida(string _name, uint _amount) {
+        // crear una nueva `Comida`
+        comidas hamburguesa = Comida(_name,_amount);
+        // añadir esta persona a nuestro array
+        comidas.push(hamburguesa);
     }
 
-    eatHamburgers("nombre",100)
+    agregarComida("hamburguesa",100)
+
+<p>Combinando en una línea...</p>
+
+    function agregarComida(string _name, uint _amount) {
+            comidas.push(Comida(_name,_amount););
+        }
+
+    hamburger("nombre",100)
 
 <p>NOTA: La convención es llamar los parámetros de las funciones con nombres que empiezan con un subrayado (_) para de esta forma diferenciarlos de variables globales.</p>
 
+<h4>Funciones Públicas y Privadas</h4>
+<p>Las funciones son públicas por defecto. Cualquiera (o cualquier otro contrato) puede llamarla y ejecutar su código.</p>
+<p>Esto puede hacer vulnerables los contratos. Es buena práctica marcar las funciones como privadas, y solamente hacer públicas aquellas las que queramos exponer.</p>
+
+<h5>Ejemplo función privada</h5>
+
+    uint[] numbers;
+
+    function _addToArray(uint _number) private {
+    numbers.push(_number);
+    }
+
+<p>--> Solo otras funciones dentro de tu contrato podrán llamar a esta función y añadir al array numbers.</p>
+
+<p>NOTA: la convención es nombrar las funciones privadas empezando con una barra baja (_).</p>
+
+<h4>Valores de Retorno</h4>
+<p>Para devolver un valor desde una función, la declaración es la siguiente:</p>
+
+    string greeting = Hola mundo!";
+
+    function sayHolaMundo() public returns (string) {
+        return greeting;
+    }
+
+<p>NOTA: En Solidity, la declaración de la función contiene al final tipo de dato del valor de retorno (en este caso string).</p>
+
+<h4>Modificadores de Función</h4>
+<p>FUNCIÓN VIEW: significa que solo puede ver los datos pero no modificarlos</p>
+
+    function sayHello() public view returns (string) {
+
+    }
+
+<p>FUNCIÓN PURE: significa que ni siquiera accede a los datos de la aplicación.</p>
+
+    function _multiply(uint a, uint b) private pure returns (uint) {
+        return a * b;
+    }
+
+<p>En esta función, el valor devuelto depende POR COMPLETO de los parámetros que le pasemos. En este caso deberíamos declarar la función como pure.</p>
+
+<p>NOTA: No siempre es fácil recordar marcar una función como pure o view, por suerte el compilador de Solidity avisa cuándo debemos usar estos modificadores de función.</p>

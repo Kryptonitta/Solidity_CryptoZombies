@@ -16,8 +16,14 @@ contract ZombieFactory {
     //Creación de array público
     Zombie[] public zombies;
 
-    //Declaración de la función
-    function createZombie(string _name, uint _dna){
+    //Declaración de la función PRIVADA
+    function _createZombie(string _name, uint _dna) private{
+        // Creando el zombie
+        zombies.push(Zombie(_name,_dna));
+    }
+
+    //Creación de función view privada 
+    function _generateRandomDna(string _str) private view returns (uint) {
         
     }
 
