@@ -11,9 +11,9 @@ Solidity es un lenguaje de alto nivel orientado a contratos. Su sintaxis es simi
 Acerca de cryptozombies 
 Te enseña a crear contratos inteligentes en Solidity mientras construyes tu propio juego cripto-coleccionable de manera interactiva
 
-/ ----- Solidity Path: Beginner to Intermediate Smart Contracts ----- /
+/ ----- SOLIDITY PATH: BEGGINER TO INTERMEDIATE SMART CONTRACTS ----- /
 
-¿Qué es un contrato?
+/ -- ¿Qué es un contrato? -- /
 Es el bloque de construcción más básico de las aplicaciones de Ethereum — todas las variables y las funciones pertenecen a un contrato, y este será el punto de partida de todos tus proyectos.
 
 Estructura base de un contrato:
@@ -22,7 +22,7 @@ Estructura base de un contrato:
 
     }
 
-¿Qué es la versión pragma? 
+/ -- ¿Qué es la versión pragma? -- /
 Los “pragmas” son instrucciones para el compilador que indican como este debe operar con el código fuente. 
 
     pragma solidity ^0.4.25;
@@ -31,7 +31,7 @@ Los “pragmas” son instrucciones para el compilador que indican como este deb
 
     }
 
-VARIABLES DE ESTADO 
+7 -- VARIABLES DE ESTADO -- / 
 Las Variables de estado se guardan permanentemente en el almacenamiento del contrato. Se escriben en la cadena de bloques de Ethereum. Es como en escribir en una base de datos.
 
 TIPOS DE DATOS:
