@@ -12,4 +12,12 @@ contract ZombieFactory {
         string name;
         uint dna ;
 
+    //Creación de array público
+    Zombie[] public zombies;
+
+    //Declaración de la función
+    function createZombie(string _name, uint _dna){
+        
+    }
+
 }
