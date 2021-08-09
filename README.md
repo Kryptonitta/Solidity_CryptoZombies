@@ -1,28 +1,28 @@
-COMPENDIO DE INFORMACIÓN BASADA EN LA DOCUMENTACIÓN OFICIAL DE SOLIDITY + CRYPTOZOMBIES
+<h1>COMPENDIO DE INFORMACIÓN BASADA EN LA DOCUMENTACIÓN OFICIAL DE SOLIDITY + CRYPTOZOMBIES</h1>
 
-https://solidity-es.readthedocs.io/es/latest/index.html
-https://cryptozombies.io/
+<a>https://solidity-es.readthedocs.io/es/latest/index.html</a>
+<a>https://cryptozombies.io/</a>
 
-/ ----- INTRODUCCIÓN ----- /
+<h2>/ ----- INTRODUCCIÓN ----- /</h2>
 
-¿Qué es Solidity?
-Solidity es un lenguaje de alto nivel orientado a contratos. Su sintaxis es similar a la de JavaScript y está enfocado específicamente a la Máquina Virtual de Etehreum (EVM).
+<h3>¿Qué es Solidity?</h3>
+<p>Solidity es un lenguaje de alto nivel orientado a contratos. Su sintaxis es similar a la de JavaScript y está enfocado específicamente a la Máquina Virtual de Etehreum (EVM).</p>
 
-Acerca de cryptozombies 
-Te enseña a crear contratos inteligentes en Solidity mientras construyes tu propio juego cripto-coleccionable de manera interactiva
+<h3>Acerca de cryptozombies</h3> 
+<p>Te enseña a crear contratos inteligentes en Solidity mientras construyes tu propio juego cripto-coleccionable de manera interactiva</p>
 
-/ ----- SOLIDITY PATH: BEGGINER TO INTERMEDIATE SMART CONTRACTS ----- /
+<h2>/ ----- SOLIDITY PATH: BEGGINER TO INTERMEDIATE SMART CONTRACTS ----- /</h2>
 
-/ -- ¿Qué es un contrato? -- /
-Es el bloque de construcción más básico de las aplicaciones de Ethereum — todas las variables y las funciones pertenecen a un contrato, y este será el punto de partida de todos tus proyectos.
+<h3> ¿Qué es un contrato? </h3>
+<p>Es el bloque de construcción más básico de las aplicaciones de Ethereum — todas las variables y las funciones pertenecen a un contrato, y este será el punto de partida de todos tus proyectos. </p>
 
-Estructura base de un contrato:
+<p>Estructura base de un contrato:</p>
 
     contract HolaMundo {
 
     }
 
-/ -- ¿Qué es la versión pragma? -- /
+<h3>¿Qué es la versión pragma?</h3>
 Los “pragmas” son instrucciones para el compilador que indican como este debe operar con el código fuente. 
 
     pragma solidity ^0.4.25;
